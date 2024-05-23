@@ -47,3 +47,10 @@ def predict():
     
 if __name__ == '__main__':
     app.run(debug=True)
+
+from app import create_app
+import sys
+
+app = create_app()
+
+print(sys.path)  # Print Python path to check module search path
