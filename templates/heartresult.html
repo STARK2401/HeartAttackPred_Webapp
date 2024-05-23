@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-image: url('https://research.jgu.edu.in/wp-content/uploads/2023/12/heart.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center top;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .result {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffff;
+            margin-bottom: 20px;
+        }
+
+        .accuracy {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .disclaimer {
+            display:flex;
+            justify-content:center;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        a {
+            font-weight: bold;
+            text-decoration: none;
+            color: #ffff;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heart Disease Prediction Result</h1>
+    <p class="result">Predicted Output: {{ result }}</p>
+    <br>
+    <p class="accuracy">Prediction done at 72.28% accuracy</p>
+    <p class="disclaimer">This is a Machine Learning model trained on previously collected data.<br> Please do not rely solely on this prediction and consult a doctor as soon as possible.</p>
+    <a href="{{ url_for('index') }}">Go Back</a>
+</body>
+</html>

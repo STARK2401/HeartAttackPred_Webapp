@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction</title>
+    <style>
+                body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url('https://miro.medium.com/v2/resize:fit:1024/1*NOeFT9Xj__-jJbyxR8hqMA.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        form {
+            opacity: 0.82;
+            font-weight: bold;
+            max-width: 500px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        label {
+            display: inline-block;
+            width: 250px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        input[type="number"], select {
+            width: 200px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            font-weight: bold;
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Heart Disease Prediction</h1>
+    <form action="{{ url_for('predict') }}" method="POST">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br>
+
+        <label for="sex">Sex (0 for female, 1 for male):</label>
+        <input type="number" id="sex" name="sex" min="0" max="1" required><br>
+
+        <label for="chestPainType">Chest Pain Type:</label>
+        <select id="chestPainType" name="chestPainType" required>
+            <option value="">Select Chest Pain Type</option>
+            <option value="0">Typical Angina</option>
+            <option value="1">Atypical Angina</option>
+            <option value="2">Non-Anginal Pain</option>
+            <option value="3">Asymptomatic</option>
+        </select><br>
+
+        <label for="restingBP">Resting Blood Pressure (in mm Hg):</label>
+        <input type="number" id="restingBP" name="restingBP" required><br>
+
+        <label for="cholesterol">Cholesterol (in mg/dl):</label>
+        <input type="number" id="cholesterol" name="cholesterol" required><br>
+
+        <label for="fastingBS">Fasting Blood Sugar (0 for &lt; 120 mg/dl, 1 for &gt; 120 mg/dl):</label>
+        <input type="number" id="fastingBS" name="fastingBS" min="0" max="1" required><br>
+
+        <label for="restingECG">Resting ECG:</label>
+        <select id="restingECG" name="restingECG" required>
+            <option value="">Select Resting ECG</option>
+            <option value="0">Normal</option>
+            <option value="1">ST-T Wave Abnormality</option>
+            <option value="2">Left Ventricular Hypertrophy</option>
+        </select><br>
+
+        <label for="maxHR">Maximum Heart Rate Achieved:</label>
+        <input type="number" id="maxHR" name="maxHR" required><br>
+
+        <label for="exerciseAngina">Exercise-Induced Angina (0 for no, 1 for yes):</label>
+        <input type="number" id="exerciseAngina" name="exerciseAngina" min="0" max="1" required><br>
+
+        <label for="oldpeak">Oldpeak (ST Depression Induced by Exercise Relative to Rest):</label>
+        <input type="number" step="0.1" id="oldpeak" name="oldpeak" required><br>
+
+        <label for="stSlope">ST Slope:</label>
+        <select id="stSlope" name="stSlope" required>
+            <option value="">Select ST Slope</option>
+            <option value="0">Upsloping</option>
+            <option value="1">Flat</option>
+            <option value="2">Downsloping</option>
+        </select><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
