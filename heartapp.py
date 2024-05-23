@@ -1,5 +1,6 @@
 import pickle
 from flask import Flask, render_template, request, send_from_directory
+import app
 import numpy as np
 import os
 app = Flask(__name__)
@@ -46,11 +47,4 @@ def predict():
          return render_template('heartresult.html',result=res)
     
 if __name__ == '__main__':
-    app.run(debug=True)
-
-from app import create_app
-import sys
-
-app = create_app()
-
-print(sys.path)  # Print Python path to check module search path
+   app.run(host="0.0.0.0", port=8080, debug=True)
