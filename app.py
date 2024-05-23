@@ -4,7 +4,7 @@ import app
 import numpy as np
 import os
 app = Flask(__name__)
-model = pickle.load(open('D:\MLprojects\HeartAttackapp\heart_model_1.pkl', 'rb'))
+model = pickle.load(open('heart_model_1.pkl', 'rb'))
 
 #model = joblib.load('heart_model_1.joblib')
 
